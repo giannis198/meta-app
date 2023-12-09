@@ -1,8 +1,10 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import Nav from "./components/Nav";
+
 import "./App.css";
+import Nav from "./components/Nav";
+
 
 function App() {
   return (

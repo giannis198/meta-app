@@ -1,7 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-        <title>
+// RestaurantMetaTags.jsx
+import React from "react";
+import { Helmet } from "react-helmet";
+
+const RestaurantMetaTags = () => {
+  return (
+    <Helmet>
+      <title>
         Little Lemon - Chicago's Fresh and Flavorful Dining Experience
       </title>
       <meta charSet="UTF-8" />
@@ -25,9 +29,9 @@
         property="og:description"
         content="Explore the vibrant menu at Little Lemon, a delightful restaurant in Chicago. We offer fresh and flavorful dishes with a touch of zest."
       />
-      <!-- {/* <meta property="og:image" content="url-to-your-image.jpg" /> */} -->
-      <!-- {/* Replace with the URL of your restaurant image */} -->
-      <!-- {/* <meta property="og:url" content="http://www.yourrestaurantwebsite.com" /> */} -->
+      {/* <meta property="og:image" content="url-to-your-image.jpg" /> */}
+      {/* Replace with the URL of your restaurant image */}
+      {/* <meta property="og:url" content="http://www.yourrestaurantwebsite.com" /> */}
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_US" />
       <meta name="twitter:card" content="summary_large_image" />
@@ -39,21 +43,10 @@
         name="twitter:description"
         content="Explore the vibrant menu at Little Lemon, a delightful restaurant in Chicago. We offer fresh and flavorful dishes with a touch of zest."
       />
-      <!-- {/* <meta property="twitter:image" content="url-to-your-image.jpg" /> */}
-      {/* Replace with the URL of your restaurant image */} -->
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+      {/* <meta property="twitter:image" content="url-to-your-image.jpg" /> */}
+      {/* Replace with the URL of your restaurant image */}
+    </Helmet>
+  );
+};
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
+export default RestaurantMetaTags;
