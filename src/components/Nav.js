@@ -1,35 +1,33 @@
 // Nav.js
 
-import React from "react";
+import { NAV_LINKS } from "../constants";
+import "./Nav.css"; // Import your CSS file
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="navbar">
       <div className="logo">
         <a href="/">
-          <img src="Logo.svg" alt="Logo" />
+          <img src="Logo.svg" alt="Logo" className="image" />
         </a>
       </div>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-        <li>
-          <a href="/menu">Menu</a>
-        </li>
-        <li>
-          <a href="/reservations">Reservations</a>
-        </li>
-        <li>
-          <a href="/order">Order Online</a>
-        </li>
-        <li>
-          <a href="/login">Login</a>
-        </li>
+      {/* <button onClick={toggleNav} type="button">
+        {isActive ? "Close" : "Menu"}
+      </button> */}
+      <ul className="nav-list">
+        {NAV_LINKS.map((link) => (
+          <li>
+            <a href={link.href} key={link.key} className="nav-link">
+            {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
+
+          <button className="mobile-menu">
+            <img src="icon _hamburger_menu.svg" alt="menu" className="mobile-menu" />
+          </button>
+      
     </nav>
   );
 };
