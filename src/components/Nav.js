@@ -1,34 +1,55 @@
-// Nav.js
-
+import React, { useState } from "react";
 import { NAV_LINKS } from "../constants";
 import "./Nav.css"; // Import your CSS file
 
 const Nav = () => {
-  return (
-    <nav className="navbar">
-      <div className="logo">
-        <a href="/">
-          <img src="Logo.svg" alt="Logo" className="image" />
-        </a>
-      </div>
-      {/* <button onClick={toggleNav} type="button">
-        {isActive ? "Close" : "Menu"}
-      </button> */}
-      <ul className="nav-list">
-        {NAV_LINKS.map((link) => (
-          <li>
-            <a href={link.href} key={link.key} className="nav-link">
-            {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+  const [isMobile, setIsMobile] = useState(false);
 
-          <button className="mobile-menu">
-            <img src="icon _hamburger_menu.svg" alt="menu" className="mobile-menu" />
-          </button>
-      
-    </nav>
+  return (
+    <>
+      <nav className="navbar">
+        <div className="logo">
+          <a href="/">
+            <img src="Logo.svg" alt="Logo" className="image" />
+          </a>
+        </div>
+
+        <ul className="nav-list">
+          {NAV_LINKS.map((link) => (
+            <li key={link.key}>
+              <a href={link.href} className="nav-link">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <button className="mobile-menu" onClick={() => setIsMobile(!isMobile)}>
+          {isMobile ? (
+            <img src="close.svg" alt="close menu" className="close-menu-icon" />
+          ) : (
+            <img
+              src="icon _hamburger_menu.svg"
+              alt="menu"
+              className="mobile-menu-icon"
+            />
+          )}
+        </button>
+      </nav>
+
+      {isMobile && (
+        <nav className="mobile-navbar">
+          <ul className="mobile-nav-list">
+            {NAV_LINKS.map((link) => (
+              <li key={link.key}>
+                <a href={link.href} className="mobile-nav-link">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </>
   );
 };
 
