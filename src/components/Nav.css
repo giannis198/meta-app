@@ -1,4 +1,5 @@
 .navbar {
+  gap: 10px;
   display: flex;
   justify-content: space-between;
   margin-left: auto;
@@ -21,37 +22,65 @@
 .nav-link {
   text-decoration: none;
   color: black;
-  font-weight: bold;
+  font-weight: semibold;
   font-family: "Markazi";
   font-size: 24px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: rgb(239, 165, 67);
+}
+
+.mobile-nav-link:hover {
+  color: rgb(239, 165, 67);
 }
 
 .mobile-nav-link {
+  align-items: center;
   text-decoration: none;
   color: black;
-  font-weight: bold;
+  font-weight: semibold;
   font-family: "Markazi";
   font-size: 24px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .mobile-nav-list {
-  display: grid;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   text-decoration: none;
   padding-right: 20px;
   list-style: none;
+  right: 0px;
+  width: 300px;
+  height: 100dvh;
+  padding: 40px 0 0 10px;
+  position: fixed;
+  gap: 10px;
+  background-color: aliceblue;
 }
 
-.mobile-navbar {
+
+
+/* .mobile-navbar {
   text-decoration: none;
-}
+  position: fixed;
+  display: flex;
+} */
 
 .mobile-menu {
+  margin: auto;
   display: inline-block;
   cursor: pointer;
+  background-color: white;
+  border: 0px;
 }
+
 .nav-list {
   display: none;
   gap: 3rem;
@@ -59,7 +88,7 @@
 }
 
 @media (min-width: 1024px) {
-  .mobile-navbar{
+  .mobile-navbar {
     display: none;
   }
   .mobile-nav-list {
@@ -79,7 +108,7 @@
 }
 
 @media (min-width: 1680px) {
-  .mobile-navbar{
+  .mobile-navbar {
     display: none;
   }
   .mobile-nav-list {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NAV_LINKS } from "../constants";
 import "./Nav.css"; // Import your CSS file
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -9,17 +10,17 @@ const Nav = () => {
     <>
       <nav className="navbar">
         <div className="logo">
-          <a href="/">
+          <Link to="/">
             <img src="Logo.svg" alt="Logo" className="image" />
-          </a>
+          </Link>
         </div>
 
         <ul className="nav-list">
           {NAV_LINKS.map((link) => (
             <li key={link.key}>
-              <a href={link.href} className="nav-link">
+              <Link to={link.href} className="nav-link">
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
